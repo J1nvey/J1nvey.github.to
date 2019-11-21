@@ -1,7 +1,7 @@
 module.exports = {
     title: 'J1nvey',
     description: '',
-    base: '/blog/',
+    base: '/repo/',
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
     ],
@@ -22,8 +22,7 @@ module.exports = {
                     title: '测试菜单1',
                     collapsable: false, // false为默认展开菜单, 默认值true是折叠
                     children: [
-                        ['test1', '子菜单1'],
-                        ['test2', '子菜单2']
+                        ['test1', '子菜单1']
                     ]
                 }
             ]
