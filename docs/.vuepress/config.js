@@ -7,25 +7,30 @@ module.exports = {
     ],
     themeConfig: {
         search: false,
+        sidebar: 'auto',
         nav: [
             {
                 text: 'VUE',
                 items: [
-                    { text: 'a1', link: '/pages/test/test1'},
-                    { text: 'a2', link: '/pages/test/test3'}
+                    { text: '组件', link: '/pages/vue/component/communication'},
                 ]
             }
         ],
         sidebar: {
-            '/pages/test/': [
+            '/pages/vue/component/': [
                 {
-                    title: '测试菜单1',
+                    title: '组件',
                     collapsable: false, // false为默认展开菜单, 默认值true是折叠
                     children: [
-                        ['test1', '子菜单1']
+                        ['communication', '组件通信']
                     ]
                 }
             ]
-        }
-    }
+        },
+    },
+    // 代码块显示行号
+    markdown: {
+        lineNumbers: true
+    },
+    lastUpdated: 'Last Updated',
 }
