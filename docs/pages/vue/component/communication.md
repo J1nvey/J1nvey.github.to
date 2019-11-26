@@ -81,7 +81,7 @@
 ### - 公共父组件传递
 其中一个子组件可以用$emit来调用父组件的方法去更新props，使得另一个子组件的props更新。
 ### - eventBus
-定义eventBus，可以全局也可以局部
+全局定义eventBus
 ```js
     // main.js 全局
     Vue.prototype.$bus = new Vue();
@@ -102,8 +102,24 @@
 ```
 ### - vuex
 待补充
-### - localStorage
-待补充
+### - sessionStorage / 
+localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。  
+sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。  
+localStorage 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。
+```js
+    // 保存数据
+    localStorage.setItem("key", "value");
+    sessionStorage.setItem("key", "value");
+    // 读取数据
+    const lastname = localStorage.getItem("key");
+    const lastname = sessionStorage.getItem("key");
+    // 删除数据
+    localStorage.removeItem("key");
+    sessionStorage.removeItem("key");
+    // 清空数据
+    localStorage.clear();
+    sessionStorage.clear();
+```
 
 ## 隔代组件通信
 
