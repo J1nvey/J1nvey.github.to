@@ -75,6 +75,28 @@
     // 能实现 但是页面会警告
     this.$refs.son.msg =='$ref'
 ```
+### - Vue.observable
+::: tip 官方文档  
+让一个对象可响应。Vue 内部会用它来处理 data 函数返回的对象。
+
+返回的对象可以直接用于渲染函数和计算属性内，并且会在发生改变时触发相应的更新。也可以作为最小化的跨组件状态存储器，用于简单的场景。
+:::
+```js
+    // store.js
+    const state = Vue.observable({
+        age: 18,
+        name: 'J1nvey'
+    });
+    const mutations = {
+        setAge (age) {
+            state.age = age;
+        },
+        setName (name) {
+            state.name = name;
+        }
+    }
+    export { state, mutations }
+```
 
 ## 兄弟组件通信
 
@@ -102,7 +124,7 @@
 ```
 ### - vuex
 待补充
-### - sessionStorage / 
+### - sessionStorage / localStorage
 localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。  
 sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。  
 localStorage 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。
@@ -232,7 +254,7 @@ $listeners 能传给后代组件非原生事件;(通过$emit来更新数据)
         mounted () {
             console.log(this.$attrs)
             // {age: 18, sex: "男"}
-            // 此时这个attrs可以继续传到下一个组件中
+            // 此时这个$attrs可以继续传到下一个组件中
         }
     }
     </script>
